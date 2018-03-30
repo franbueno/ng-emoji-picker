@@ -28,14 +28,14 @@ import { EmojiService } from '../emoji.service';
       </textarea>
     </ng-template>
     <ng-template [ngIf]="!textArea">
-      <input #inputEl type="text"
+      <input #inputEl matInput formControlName="title" type="text" autocomplete="on"
         [ngClass]="[inputClass]"
         (keyup)="onKeyup($event)"
         (keyup.enter)="onEnter()"
         (blur)="onBlur($event)"
         (focus)="onFocus($event)"
         (ngModelChange)="onChange($event)"
-        [(ngModel)]="input"/>
+        [(ngModel)]="input" required/>
     </ng-template>
     <div class="emoji-search"
       [ngClass]="[popupAnchor, searchClass]"
