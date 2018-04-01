@@ -1,4 +1,4 @@
-# Angular 4 Emoji Picker
+# Angular 5 Emoji Picker for Material
 [![npm version](https://badge.fury.io/js/ng-emoji-picker.svg)](https://badge.fury.io/js/ng-emoji-picker)
 
 ### Important / Credits
@@ -6,16 +6,14 @@ This package is based on https://github.com/lbertenasco/ng-emoji-picker
 I've started to adapt it for material
 
 ## Usage
-Install through npm or yarn
+Install through npm
 ```bash
-npm install ng-emoji-picker --save # Angular >= 5
-npm install ng-emoji-picker@1.1.13 --save # For Angular <= 4 please use version 1.1.13.
-# same with yarn
-yarn add ng-emoji-picker
+npm install ng-emoji-picker-material --save # Angular >= 5
+
 ```
 In your module file for your angular project.
 ```javascript
-import {EmojiPickerModule} from 'ng-emoji-picker';
+import {EmojiPickerModule} from 'ng-emoji-picker-material';
 
 @NgModule({
   ...
@@ -36,7 +34,7 @@ Where to anchor the emoji popup
 
 `[onEnter]` : method to run when users presses enter key. If you want to use your parent scope inside the function make sure to bind the function (`[onEnter]="onEnterFunction.bind(this)"`)
 
-`[textArea]` : use `textarea` instead of `input` by passing an object. Available properties which bind to the textarea tag are `cols & rows`.
+`[group]` : assign FormGroup
 
 `[autofocus]` : autofocus on the textarea/input right after the component is created.
 
@@ -65,6 +63,7 @@ Where to anchor the emoji popup
 export class ExampleComponent {
 
     public openPopup: Function;
+    public form: FormGroup;
 
     setPopupAction(fn: any) {
         this.openPopup = fn;
@@ -74,22 +73,20 @@ export class ExampleComponent {
 ```html
 <emoji-input
   [(model)]="bindedVariable"
-  [textArea]="{cols: 40, rows: 5}"
+  [group]="form"
   [onEnter]="onEnterFunction"
   [popupAnchor]="'bottom'"
   (setPopupAction)="setPopupAction($event)">
 </emoji-input>
 ```
 
-### Demo project available here: https://github.com/lbertenasco/ng-emoji-picker-demo
-
 ## Submitting an Issue
 
 If you're confident that you've found a bug in
-ng-emoji-picker, please [open an issue][issues], but check to make sure it hasn't
+ng-emoji-picker-material, please [open an issue][issues], but check to make sure it hasn't
 already been submitted. When submitting a bug report, please include a
 [Gist][] that includes a stack trace and any details that may be
-necessary to reproduce the bug, including your browser, version of ng-emoji-picker, and operating system. Ideally, a bug report should include a
+necessary to reproduce the bug, including your browser, version of ng-emoji-picker-material, and operating system. Ideally, a bug report should include a
 pull request with failing specs.
 
 [gist]: https://gist.github.com/
@@ -102,7 +99,7 @@ pull request with failing specs.
 5. Add, commit, and push your changes.
 6. [Submit a pull request.][pr]
 
-[issues]: https://github.com/lbertenasco/ng-emoji-picker/issues
+[issues]: https://github.com/franbueno/ng-emoji-picker-material/issues
 [fork]: http://help.github.com/fork-a-repo/
 [branch]: http://learn.github.com/p/branching.html
 [pr]: http://help.github.com/send-pull-requests/
