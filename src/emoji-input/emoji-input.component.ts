@@ -5,6 +5,7 @@ import {
   OnChanges,
   Input,
   Output,
+  HostListener,
   EventEmitter,
   ViewChild
 } from '@angular/core';
@@ -45,6 +46,7 @@ import {EmojiService} from '../emoji.service';
                  [(ngModel)]="input"
                  required/>
         </mat-form-field>
+        <button type="button" name="button" class="add-emoji" (click)="openPopup($event)">☺︎</button>
       </div>
     </ng-template>
     <div class="emoji-search"
@@ -96,7 +98,12 @@ import {EmojiService} from '../emoji.service';
     }
 
     :host .mat-form-field {
-      width: 100%;
+      width: 95%;
+    }
+    
+    :host .add-emoji {
+      font-size: 25px;
+      vertical-align: middle;
     }
 
     :host .emoji-search input {
@@ -173,6 +180,10 @@ export class EmojiInputComponent implements OnInit, AfterViewInit, OnChanges {
 
   }
 
+  @HostListener('document:click', ['$event']) clickedOutside($event){
+    this.popupOpen = false;
+  }
+
   ngOnInit() {
 
     if (this.setPopupAction) {
@@ -227,12 +238,15 @@ export class EmojiInputComponent implements OnInit, AfterViewInit, OnChanges {
     this.filteredEmojis = this.getFilteredEmojis();
   }
 
-  openPopup(status: boolean = null) {
+  openPopup($event: Event, status: boolean = null) {
     if (status === null) {
       this.popupOpen = !this.popupOpen;
     } else {
       this.popupOpen = status;
     }
+
+    $event.preventDefault();
+    $event.stopPropagation();  // <- that will stop propagation on lower layers
   }
 
   updateFilteredEmojis() {
