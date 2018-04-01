@@ -2,8 +2,8 @@
 [![npm version](https://badge.fury.io/js/ng-emoji-picker.svg)](https://badge.fury.io/js/ng-emoji-picker)
 
 ### Important / Credits
-This package is based on https://github.com/AnteWall/angular2-emoji
-Since that repository is not being maintained I've started using this on my own projects.
+This package is based on https://github.com/lbertenasco/ng-emoji-picker
+I've started to adapt it for material
 
 ## Usage
 Install through npm or yarn

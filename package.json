@@ -1,29 +1,36 @@
 {
-  "name": "ng-emoji-picker",
-  "version": "1.2.4",
-  "description": "Angular 2 Emoji Picker",
+  "name": "ng-emoji-picker-material",
+  "version": "0.0.1",
+  "description": "Angular 5 Emoji Picker for Material",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lbertenasco/ng-emoji-picker.git"
+    "url": "https://github.com/franbueno/ng-emoji-picker.git"
   },
   "keywords": [
     "angular",
     "angular2",
     "angular 2",
+    "angular5",
+    "angular 5",
     "emoji",
     "picker",
-    "angular2 emoji picker"
+    "material",
+    "angular emoji picker"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lbertenasco/ng-emoji-picker/issues"
+    "url": "https://github.com/franbueno/ng-emoji-picker/issues"
   },
-  "homepage": "https://github.com/lbertenasco/ng-emoji-picker#readme",
+  "homepage": "https://github.com/franbueno/ng-emoji-picker#readme",
   "dependencies": {
+    "@angular/animations": "^5.2.9",
+    "@angular/cdk": "^5.2.4",
     "@angular/common": "^5.x.x",
     "@angular/core": "^5.x.x",
     "@angular/forms": "^5.x.x",
+    "@angular/material": "^5.2.4",
+    "@angular/platform-browser": "^5.2.9",
     "rxjs": "^5.4.1"
   },
   "devDependencies": {
