@@ -1,6 +1,6 @@
 {
   "name": "ng-emoji-picker-material",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Angular 5 Emoji Picker for Material",
   "main": "index.js",
   "repository": {
